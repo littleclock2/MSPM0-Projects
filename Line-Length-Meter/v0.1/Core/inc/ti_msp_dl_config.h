@@ -1,0 +1,260 @@
+/*
+ * Copyright (c) 2023, Texas Instruments Incorporated - http://www.ti.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/*
+ *  ============ ti_msp_dl_config.h =============
+ *  Configured MSPM0 DriverLib module declarations
+ *
+ *  DO NOT EDIT - This file is generated for the MSPM0G350X
+ *  by the SysConfig tool.
+ */
+#ifndef ti_msp_dl_config_h
+#define ti_msp_dl_config_h
+
+#define CONFIG_MSPM0G350X
+
+#if defined(__ti_version__) || defined(__TI_COMPILER_VERSION__)
+#define SYSCONFIG_WEAK __attribute__((weak))
+#elif defined(__IAR_SYSTEMS_ICC__)
+#define SYSCONFIG_WEAK __weak
+#elif defined(__GNUC__)
+#define SYSCONFIG_WEAK __attribute__((weak))
+#endif
+
+#include <ti/devices/msp/msp.h>
+#include <ti/driverlib/driverlib.h>
+#include <ti/driverlib/m0p/dl_core.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/*
+ *  ======== SYSCFG_DL_init ========
+ *  Perform all required MSP DL initialization
+ *
+ *  This function should be called once at a point before any use of
+ *  MSP DL.
+ */
+
+
+/* clang-format off */
+
+#define POWER_STARTUP_DELAY                                                (16)
+
+
+
+#define CPUCLK_FREQ                                                     32000000
+
+
+
+/* Defines for PWM_SG90 */
+#define PWM_SG90_INST                                                      TIMG8
+#define PWM_SG90_INST_IRQHandler                                TIMG8_IRQHandler
+#define PWM_SG90_INST_INT_IRQN                                  (TIMG8_INT_IRQn)
+#define PWM_SG90_INST_CLK_FREQ                                             20000
+/* GPIO defines for channel 0 */
+#define GPIO_PWM_SG90_C0_PORT                                              GPIOA
+#define GPIO_PWM_SG90_C0_PIN                                       DL_GPIO_PIN_7
+#define GPIO_PWM_SG90_C0_IOMUX                                   (IOMUX_PINCM14)
+#define GPIO_PWM_SG90_C0_IOMUX_FUNC                  IOMUX_PINCM14_PF_TIMG8_CCP0
+#define GPIO_PWM_SG90_C0_IDX                                 DL_TIMER_CC_0_INDEX
+
+
+
+/* Defines for TIMER_0 */
+#define TIMER_0_INST                                                     (TIMA0)
+#define TIMER_0_INST_IRQHandler                                 TIMA0_IRQHandler
+#define TIMER_0_INST_INT_IRQN                                   (TIMA0_INT_IRQn)
+#define TIMER_0_INST_LOAD_VALUE                                         (49999U)
+
+
+
+/* Defines for UART_0 */
+#define UART_0_INST                                                        UART0
+#define UART_0_INST_IRQHandler                                  UART0_IRQHandler
+#define UART_0_INST_INT_IRQN                                      UART0_INT_IRQn
+#define GPIO_UART_0_RX_PORT                                                GPIOA
+#define GPIO_UART_0_TX_PORT                                                GPIOA
+#define GPIO_UART_0_RX_PIN                                        DL_GPIO_PIN_11
+#define GPIO_UART_0_TX_PIN                                        DL_GPIO_PIN_10
+#define GPIO_UART_0_IOMUX_RX                                     (IOMUX_PINCM22)
+#define GPIO_UART_0_IOMUX_TX                                     (IOMUX_PINCM21)
+#define GPIO_UART_0_IOMUX_RX_FUNC                      IOMUX_PINCM22_PF_UART0_RX
+#define GPIO_UART_0_IOMUX_TX_FUNC                      IOMUX_PINCM21_PF_UART0_TX
+#define UART_0_BAUD_RATE                                                (115200)
+#define UART_0_IBRD_4_MHZ_115200_BAUD                                        (2)
+#define UART_0_FBRD_4_MHZ_115200_BAUD                                       (11)
+
+
+
+
+/* Defines for SPI_0 */
+#define SPI_0_INST                                                         SPI1
+#define SPI_0_INST_IRQHandler                                   SPI1_IRQHandler
+#define SPI_0_INST_INT_IRQN                                       SPI1_INT_IRQn
+#define GPIO_SPI_0_PICO_PORT                                              GPIOB
+#define GPIO_SPI_0_PICO_PIN                                       DL_GPIO_PIN_8
+#define GPIO_SPI_0_IOMUX_PICO                                   (IOMUX_PINCM25)
+#define GPIO_SPI_0_IOMUX_PICO_FUNC                   IOMUX_PINCM25_PF_SPI1_PICO
+#define GPIO_SPI_0_POCI_PORT                                              GPIOB
+#define GPIO_SPI_0_POCI_PIN                                       DL_GPIO_PIN_7
+#define GPIO_SPI_0_IOMUX_POCI                                   (IOMUX_PINCM24)
+#define GPIO_SPI_0_IOMUX_POCI_FUNC                   IOMUX_PINCM24_PF_SPI1_POCI
+/* GPIO configuration for SPI_0 */
+#define GPIO_SPI_0_SCLK_PORT                                              GPIOB
+#define GPIO_SPI_0_SCLK_PIN                                       DL_GPIO_PIN_9
+#define GPIO_SPI_0_IOMUX_SCLK                                   (IOMUX_PINCM26)
+#define GPIO_SPI_0_IOMUX_SCLK_FUNC                   IOMUX_PINCM26_PF_SPI1_SCLK
+
+
+
+/* Defines for ADC_Volt */
+#define ADC_Volt_INST                                                       ADC1
+#define ADC_Volt_INST_IRQHandler                                 ADC1_IRQHandler
+#define ADC_Volt_INST_INT_IRQN                                   (ADC1_INT_IRQn)
+#define ADC_Volt_ADCMEM_0                                     DL_ADC12_MEM_IDX_0
+#define ADC_Volt_ADCMEM_0_REF                    DL_ADC12_REFERENCE_VOLTAGE_VDDA
+#define ADC_Volt_ADCMEM_0_REF_VOLTAGE                                         -1 // VDDA cannot be determined
+#define GPIO_ADC_Volt_C6_PORT                                              GPIOB
+#define GPIO_ADC_Volt_C6_PIN                                      DL_GPIO_PIN_19
+
+
+
+/* Port definition for Pin Group LED */
+#define LED_PORT                                                         (GPIOB)
+
+/* Defines for PIN_1: GPIOB.22 with pinCMx 50 on package pin 21 */
+#define LED_PIN_1_PIN                                           (DL_GPIO_PIN_22)
+#define LED_PIN_1_IOMUX                                          (IOMUX_PINCM50)
+/* Port definition for Pin Group OLED */
+#define OLED_PORT                                                        (GPIOB)
+
+/* Defines for DC: GPIOB.11 with pinCMx 28 on package pin 63 */
+#define OLED_DC_PIN                                             (DL_GPIO_PIN_11)
+#define OLED_DC_IOMUX                                            (IOMUX_PINCM28)
+/* Defines for RES: GPIOB.10 with pinCMx 27 on package pin 62 */
+#define OLED_RES_PIN                                            (DL_GPIO_PIN_10)
+#define OLED_RES_IOMUX                                           (IOMUX_PINCM27)
+/* Defines for CS: GPIOB.14 with pinCMx 31 on package pin 2 */
+#define OLED_CS_PIN                                             (DL_GPIO_PIN_14)
+#define OLED_CS_IOMUX                                            (IOMUX_PINCM31)
+/* Defines for PF0: GPIOB.20 with pinCMx 48 on package pin 19 */
+#define AD9910_PF0_PORT                                                  (GPIOB)
+#define AD9910_PF0_PIN                                          (DL_GPIO_PIN_20)
+#define AD9910_PF0_IOMUX                                         (IOMUX_PINCM48)
+/* Defines for PF1: GPIOA.17 with pinCMx 39 on package pin 10 */
+#define AD9910_PF1_PORT                                                  (GPIOA)
+#define AD9910_PF1_PIN                                          (DL_GPIO_PIN_17)
+#define AD9910_PF1_IOMUX                                         (IOMUX_PINCM39)
+/* Defines for PF2: GPIOA.14 with pinCMx 36 on package pin 7 */
+#define AD9910_PF2_PORT                                                  (GPIOA)
+#define AD9910_PF2_PIN                                          (DL_GPIO_PIN_14)
+#define AD9910_PF2_IOMUX                                         (IOMUX_PINCM36)
+/* Defines for OSK: GPIOA.22 with pinCMx 47 on package pin 18 */
+#define AD9910_OSK_PORT                                                  (GPIOA)
+#define AD9910_OSK_PIN                                          (DL_GPIO_PIN_22)
+#define AD9910_OSK_IOMUX                                         (IOMUX_PINCM47)
+/* Defines for IO_UP: GPIOA.15 with pinCMx 37 on package pin 8 */
+#define AD9910_IO_UP_PORT                                                (GPIOA)
+#define AD9910_IO_UP_PIN                                        (DL_GPIO_PIN_15)
+#define AD9910_IO_UP_IOMUX                                       (IOMUX_PINCM37)
+/* Defines for CS_AD9910: GPIOA.26 with pinCMx 59 on package pin 30 */
+#define AD9910_CS_AD9910_PORT                                            (GPIOA)
+#define AD9910_CS_AD9910_PIN                                    (DL_GPIO_PIN_26)
+#define AD9910_CS_AD9910_IOMUX                                   (IOMUX_PINCM59)
+/* Defines for SCLK: GPIOA.27 with pinCMx 60 on package pin 31 */
+#define AD9910_SCLK_PORT                                                 (GPIOA)
+#define AD9910_SCLK_PIN                                         (DL_GPIO_PIN_27)
+#define AD9910_SCLK_IOMUX                                        (IOMUX_PINCM60)
+/* Defines for TEN: GPIOA.16 with pinCMx 38 on package pin 9 */
+#define AD9910_TEN_PORT                                                  (GPIOA)
+#define AD9910_TEN_PIN                                          (DL_GPIO_PIN_16)
+#define AD9910_TEN_IOMUX                                         (IOMUX_PINCM38)
+/* Defines for DRO: GPIOB.25 with pinCMx 56 on package pin 27 */
+#define AD9910_DRO_PORT                                                  (GPIOB)
+#define AD9910_DRO_PIN                                          (DL_GPIO_PIN_25)
+#define AD9910_DRO_IOMUX                                         (IOMUX_PINCM56)
+/* Defines for DRC: GPIOB.24 with pinCMx 52 on package pin 23 */
+#define AD9910_DRC_PORT                                                  (GPIOB)
+#define AD9910_DRC_PIN                                          (DL_GPIO_PIN_24)
+#define AD9910_DRC_IOMUX                                         (IOMUX_PINCM52)
+/* Defines for DRH: GPIOA.25 with pinCMx 55 on package pin 26 */
+#define AD9910_DRH_PORT                                                  (GPIOA)
+#define AD9910_DRH_PIN                                          (DL_GPIO_PIN_25)
+#define AD9910_DRH_IOMUX                                         (IOMUX_PINCM55)
+/* Defines for PWR: GPIOB.18 with pinCMx 44 on package pin 15 */
+#define AD9910_PWR_PORT                                                  (GPIOB)
+#define AD9910_PWR_PIN                                          (DL_GPIO_PIN_18)
+#define AD9910_PWR_IOMUX                                         (IOMUX_PINCM44)
+/* Defines for REST: GPIOB.17 with pinCMx 43 on package pin 14 */
+#define AD9910_REST_PORT                                                 (GPIOB)
+#define AD9910_REST_PIN                                         (DL_GPIO_PIN_17)
+#define AD9910_REST_IOMUX                                        (IOMUX_PINCM43)
+/* Defines for SDIO: GPIOA.24 with pinCMx 54 on package pin 25 */
+#define AD9910_SDIO_PORT                                                 (GPIOA)
+#define AD9910_SDIO_PIN                                         (DL_GPIO_PIN_24)
+#define AD9910_SDIO_IOMUX                                        (IOMUX_PINCM54)
+/* Defines for R1: GPIOA.12 with pinCMx 34 on package pin 5 */
+#define Relay_R1_PORT                                                    (GPIOA)
+#define Relay_R1_PIN                                            (DL_GPIO_PIN_12)
+#define Relay_R1_IOMUX                                           (IOMUX_PINCM34)
+/* Defines for R2: GPIOB.23 with pinCMx 51 on package pin 22 */
+#define Relay_R2_PORT                                                    (GPIOB)
+#define Relay_R2_PIN                                            (DL_GPIO_PIN_23)
+#define Relay_R2_IOMUX                                           (IOMUX_PINCM51)
+/* Defines for R3: GPIOB.27 with pinCMx 58 on package pin 29 */
+#define Relay_R3_PORT                                                    (GPIOB)
+#define Relay_R3_PIN                                            (DL_GPIO_PIN_27)
+#define Relay_R3_IOMUX                                           (IOMUX_PINCM58)
+
+/* clang-format on */
+
+void SYSCFG_DL_init(void);
+void SYSCFG_DL_initPower(void);
+void SYSCFG_DL_GPIO_init(void);
+void SYSCFG_DL_SYSCTL_init(void);
+void SYSCFG_DL_PWM_SG90_init(void);
+void SYSCFG_DL_TIMER_0_init(void);
+void SYSCFG_DL_UART_0_init(void);
+void SYSCFG_DL_SPI_0_init(void);
+void SYSCFG_DL_ADC_Volt_init(void);
+
+
+bool SYSCFG_DL_saveConfiguration(void);
+bool SYSCFG_DL_restoreConfiguration(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* ti_msp_dl_config_h */
